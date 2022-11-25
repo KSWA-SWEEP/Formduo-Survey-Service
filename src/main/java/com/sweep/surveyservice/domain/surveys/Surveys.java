@@ -1,6 +1,5 @@
 package com.sweep.surveyservice.domain.surveys;
 
-import com.sweep.surveyservice.domain.survey_resps.SurveyResps;
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import lombok.Builder;
 import lombok.Getter;
@@ -71,11 +70,6 @@ public class Surveys {
 
     @Column(name = "SVY_TYPE")
     private String svyType;
-
-    @OneToMany(mappedBy = "survey")
-    List<SurveyResps> surveyResps = new ArrayList<SurveyResps>();
-
-
 
     @Builder
     public Surveys(String svySt, String email, String svyTitle,

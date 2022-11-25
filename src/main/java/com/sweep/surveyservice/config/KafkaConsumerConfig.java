@@ -18,7 +18,7 @@ public class KafkaConsumerConfig {
     @Bean
     public ConsumerFactory<String, String> consumerFactory() { //접속하고자 하는 정보 topic
         Map<String, Object> properties = new HashMap<>();
-        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
+        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "consumerGroupId"); //컨슈머 그루핑되어있으면 지금은 1개임
         properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);

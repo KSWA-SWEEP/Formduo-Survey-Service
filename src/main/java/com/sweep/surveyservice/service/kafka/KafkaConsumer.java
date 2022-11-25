@@ -26,7 +26,7 @@ public class KafkaConsumer {
     }
 
     @KafkaListener(topics = "survey-response-topic")
-    public void updateQty(String kafkaMessage){ //토픽에서 메세지 가져옴
+    public void updateCount(String kafkaMessage){ //토픽에서 메세지 가져옴
         log.info("Kafka Message: ->" + kafkaMessage);
 
         Map<Object, Object> map = new HashMap<>();
@@ -37,13 +37,11 @@ public class KafkaConsumer {
             ex.printStackTrace();
         }
 
-        int surveyId = (Integer) map.get("surveyId");
+        int surveyId = (Integer) map.get("svyId");
         Surveys entity = repository.findById(surveyId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 게시물이 없습니다. id =" + surveyId));
-        if (entity != null) {
-            entity.countUp(entity.getSvyRespCount() + 1);
-            repository.save(entity);
-        }
+                .orElseThrow(() -> new IllegalArgumentException("해당 설문이 없습니다. id =" + surveyId));
 
+        entity.countUp(entity.getSvyRespCount() + 1);
+        repository.save(entity);
     }
 }
