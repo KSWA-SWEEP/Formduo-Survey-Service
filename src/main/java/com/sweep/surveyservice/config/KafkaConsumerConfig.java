@@ -2,6 +2,7 @@ package com.sweep.surveyservice.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
@@ -15,10 +16,16 @@ import java.util.Map;
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
+
+    @Value("${kafka.host}")
+    String kafka_host;
+
+    @Value("${kafka.port}")
+    String kafka_port;
     @Bean
     public ConsumerFactory<String, String> consumerFactory() { //접속하고자 하는 정보 topic
         Map<String, Object> properties = new HashMap<>();
-        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
+        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafka_host+":"+kafka_port);
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "consumerGroupId"); //컨슈머 그루핑되어있으면 지금은 1개임
         properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
