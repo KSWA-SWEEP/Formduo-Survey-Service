@@ -51,7 +51,11 @@ public class SurveyService {
         Surveys entity = surveysRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 설문이 없습니다. id ="+ id));
 
-        System.out.println(entity);
+        if (entity.getDelYn().equals('Y'))
+        {
+            throw new IllegalArgumentException("삭제된 설문입니다.");
+        }
+
         return new SurveysResponseDto(entity);}
 
     @Transactional(readOnly = true)
