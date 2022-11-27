@@ -1,10 +1,10 @@
-
 pipeline {
   agent any
     tools {
     maven 'M3'
     }
 
+  try{
     environment {
         dockerHubRegistry = 'qkdrmsgh73/service-survey'
         dockerHubRegistryCredential = '634c3ce0-9c39-469b-86f3-3836d26d2edf'
@@ -110,4 +110,9 @@ pipeline {
                 }
         }
     }
+  } catch(e) {
+    slackSend (color: '#FF0000', message: "FAILED: Build'${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+    // throw the error
+    throw e;
+  }
 }
