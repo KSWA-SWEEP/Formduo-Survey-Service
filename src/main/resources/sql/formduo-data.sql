@@ -110,7 +110,7 @@ CREATE TABLE `tb_svy` (
 --                                CONSTRAINT `FK5sqmdcm9ri6mqrsj716ry2c6g` FOREIGN KEY (`svy_id`) REFERENCES `tb_svy` (`svy_id`),
 --                                CONSTRAINT `FKd761jtkhvbu74skaorwo96x4x` FOREIGN KEY (`survey`) REFERENCES `tb_svy` (`svy_id`)
 -- ) ENGINE=InnoDB AUTO_INCREMENT=2995 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
--- SET foreign_key_checks = 1;
+SET foreign_key_checks = 1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

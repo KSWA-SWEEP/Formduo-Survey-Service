@@ -21,7 +21,7 @@ pipeline {
                 slackSend (channel: '#jenkins', color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
             }
         }
-      
+
         stage('Checkout Application Git Branch') {
             steps {
                 git credentialsId: "${gitCredentialId}",
@@ -104,7 +104,7 @@ pipeline {
                     sh "git add ./${dockerImageName}/deployment.yaml"
                     sh "git config --global user.email 'panggeunho@gmail.com'"
                     sh "git config --global user.name 'banggeunho'"
-                    sh "git commit -m '[UPDATE] config-service ${currentBuild.number} image versioning'"
+                    sh "git commit -m '[UPDATE] ${dockerImageName} ${currentBuild.number} image versioning'"
                     sshagent(credentials: ["${gitCredentialId}"]) {
                         sh "git remote set-url origin ${gitManifestUrl}"
                         sh "git push -u origin main"
@@ -120,7 +120,7 @@ pipeline {
                         }
                 }
         }
-      
+
         stage('End') {
             agent any
             steps {

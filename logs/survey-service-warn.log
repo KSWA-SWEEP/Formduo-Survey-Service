@@ -1,11 +1,11 @@
-[2022-11-18 15:45:27:3273][pool-2-thread-1] WARN  o.s.c.s.a.z.ZipkinAutoConfiguration - Check result of the [RestTemplateSender{http://zipkin:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://zipkin:9411/api/v2/spans": zipkin; nested exception is java.net.UnknownHostException: zipkin}]
-[2022-11-18 15:45:28:4305][main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2022-11-18 15:45:29:5056][main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/api/v1/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-[2022-11-18 15:45:30:5853][main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-[2022-11-18 15:45:30:6382][main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: discovery: nodename nor servname provided, or not known
-[2022-11-18 15:45:30:6383][main] WARN  c.netflix.discovery.DiscoveryClient - Using default backup registry implementation which does not do anything.
-[2022-11-18 15:45:30:6405][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: discovery
-[2022-11-18 15:45:30:6408][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
+[2022-11-29 02:33:45:26986][pool-2-thread-1] WARN  o.s.c.s.a.z.ZipkinAutoConfiguration - Check result of the [RestTemplateSender{http://zipkin:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://zipkin:9411/api/v2/spans": zipkin; nested exception is java.net.UnknownHostException: zipkin}]
+[2022-11-29 02:33:50:31809][main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-11-29 02:33:51:33625][main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/api/v1/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2022-11-29 02:33:55:36986][main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[2022-11-29 02:33:56:38308][main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery: nodename nor servname provided, or not known
+[2022-11-29 02:33:56:38311][main] WARN  c.netflix.discovery.DiscoveryClient - Using default backup registry implementation which does not do anything.
+[2022-11-29 02:33:56:38414][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery
+[2022-11-29 02:33:56:38416][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -21,7 +21,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-[2022-11-18 15:45:30:6408][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
+[2022-11-29 02:33:56:38416][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -37,8 +37,19 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-[2022-11-18 15:45:38:13973][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: discovery
-[2022-11-18 15:45:38:13973][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
+[2022-11-29 02:33:57:39108][main] WARN  o.apache.kafka.clients.ClientUtils - Couldn't resolve server kafka-service:29092 from bootstrap.servers as DNS resolution failed for kafka-service
+[2022-11-29 02:33:57:39115][main] WARN  o.s.w.c.s.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.KafkaException: Failed to construct kafka consumer
+[2022-11-29 02:33:58:40153][main] WARN  z.r.AsyncReporter$BoundedAsyncReporter - Timed out waiting for in-flight spans to send
+[2022-11-29 02:34:01:43208][main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery
+[2022-11-29 02:34:15:2191][main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@79d9214d uris = array<String>['http://service-config:8760'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://service-config:8760/survey/dev": service-config; nested exception is java.net.UnknownHostException: service-config
+[2022-11-29 02:34:23:10319][pool-1-thread-1] WARN  o.s.c.s.a.z.ZipkinAutoConfiguration - Check result of the [RestTemplateSender{http://zipkin:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://zipkin:9411/api/v2/spans": zipkin; nested exception is java.net.UnknownHostException: zipkin}]
+[2022-11-29 02:34:28:14703][main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-11-29 02:34:29:16583][main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/api/v1/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2022-11-29 02:34:33:20058][main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[2022-11-29 02:34:34:21154][main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery: nodename nor servname provided, or not known
+[2022-11-29 02:34:34:21155][main] WARN  c.netflix.discovery.DiscoveryClient - Using default backup registry implementation which does not do anything.
+[2022-11-29 02:34:34:21218][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery
+[2022-11-29 02:34:34:21222][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -54,7 +65,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-[2022-11-18 15:45:38:13973][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
+[2022-11-29 02:34:34:21223][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -70,15 +81,38 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-[2022-11-18 15:45:42:18085][SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: discovery: nodename nor servname provided, or not known
-[2022-11-18 15:47:01:3055][pool-1-thread-1] WARN  o.s.c.s.a.z.ZipkinAutoConfiguration - Check result of the [RestTemplateSender{http://zipkin:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://zipkin:9411/api/v2/spans": zipkin; nested exception is java.net.UnknownHostException: zipkin}]
-[2022-11-18 15:47:02:4098][main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2022-11-18 15:47:03:4852][main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/api/v1/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-[2022-11-18 15:47:04:5772][main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-[2022-11-18 15:47:04:6234][main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: discovery: nodename nor servname provided, or not known
-[2022-11-18 15:47:04:6236][main] WARN  c.netflix.discovery.DiscoveryClient - Using default backup registry implementation which does not do anything.
-[2022-11-18 15:47:04:6262][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: discovery
-[2022-11-18 15:47:04:6263][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
+[2022-11-29 02:34:35:22275][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:35:22277][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:35:22367][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:35:22367][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:35:22470][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:35:22470][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:36:22674][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:36:22675][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:36:23049][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:36:23049][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:37:23859][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:37:23860][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:38:25096][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:38:25097][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:39:25930][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:39:25931][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:40:26845][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:40:26845][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:41:27972][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:41:27973][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:42:28809][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:42:28810][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:43:30048][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:43:30048][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:44:30894][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:44:30894][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:45:32116][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:45:32116][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:46:33038][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Connection to node -1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+[2022-11-29 02:34:46:33039][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Bootstrap broker localhost:29092 (id: -1 rack: null) disconnected
+[2022-11-29 02:34:46:33236][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery: nodename nor servname provided, or not known
+[2022-11-29 02:34:46:33238][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -94,7 +128,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-[2022-11-18 15:47:04:6263][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
+[2022-11-29 02:34:46:33244][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -110,8 +144,16 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-[2022-11-18 15:47:10:12158][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: discovery
-[2022-11-18 15:47:10:12159][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
+[2022-11-29 02:34:51:38401][SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery
+[2022-11-29 02:35:24:2198][main] WARN  o.s.c.c.c.ConfigServerConfigDataLoader - Could not locate PropertySource ([ConfigServerConfigDataResource@79d9214d uris = array<String>['http://service-config:8760'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://service-config:8760/survey/dev": service-config; nested exception is java.net.UnknownHostException: service-config
+[2022-11-29 02:35:32:10371][pool-1-thread-1] WARN  o.s.c.s.a.z.ZipkinAutoConfiguration - Check result of the [RestTemplateSender{http://zipkin:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://zipkin:9411/api/v2/spans": zipkin; nested exception is java.net.UnknownHostException: zipkin}]
+[2022-11-29 02:35:37:14829][main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-11-29 02:35:39:16757][main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/api/v1/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+[2022-11-29 02:35:42:19950][main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[2022-11-29 02:35:43:21196][main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery: nodename nor servname provided, or not known
+[2022-11-29 02:35:43:21200][main] WARN  c.netflix.discovery.DiscoveryClient - Using default backup registry implementation which does not do anything.
+[2022-11-29 02:35:43:21302][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery
+[2022-11-29 02:35:43:21305][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -127,7 +169,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-[2022-11-18 15:47:10:12159][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
+[2022-11-29 02:35:43:21305][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -143,4 +185,40 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-[2022-11-18 15:47:14:16221][SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: discovery
+[2022-11-29 02:35:44:22509][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Error while fetching metadata with correlation id 2 : {survey-response-topic=LEADER_NOT_AVAILABLE}
+[2022-11-29 02:35:45:22658][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Error while fetching metadata with correlation id 4 : {survey-response-topic=LEADER_NOT_AVAILABLE}
+[2022-11-29 02:35:45:22772][org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] WARN  o.a.kafka.clients.NetworkClient - [Consumer clientId=consumer-consumerGroupId-1, groupId=consumerGroupId] Error while fetching metadata with correlation id 6 : {survey-response-topic=LEADER_NOT_AVAILABLE}
+[2022-11-29 02:35:54:32161][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery: nodename nor servname provided, or not known
+[2022-11-29 02:35:54:32163][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SURVEY-SERVICE/172.30.1.80:survey-service:2222 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2022-11-29 02:35:54:32163][DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2022-11-29 02:35:59:37205][SpringApplicationShutdownHook] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.UnknownHostException: service-discovery
