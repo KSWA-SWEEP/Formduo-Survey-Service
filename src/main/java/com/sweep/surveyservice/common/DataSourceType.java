@@ -1,5 +1,5 @@
-package com.sweep.surveyservice.common;
-
-public enum DataSourceType {
-    Master, Slave
-}
+//package com.sweep.surveyservice.common;
+//
+//public enum DataSourceType {
+//    Master, Slave
+//}

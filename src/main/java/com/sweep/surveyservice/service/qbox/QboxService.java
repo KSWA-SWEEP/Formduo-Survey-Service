@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,18 +21,18 @@ public class QboxService {
 
 
     @Transactional
-    public Integer save(QboxRequestDto requestDto) {
-        return qboxRepository.save(requestDto.toEntity()).getQId();
+    public String save(QboxRequestDto requestDto) {
+        return qboxRepository.save(requestDto.toEntity()).getId();
     }
 
-    @Transactional
-    public QboxResponseDto findById(int id){
+    @Transactional(readOnly = true)
+    public QboxResponseDto findById(String id){
         Qbox entity = qboxRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 큐박스 컨텐츠가 없습니다. id ="+ id));
 
         return new QboxResponseDto(entity);}
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<QboxResponseDto> findAll() {
         // 설문이 있는지 없는지 확인
         List<Qbox> list = qboxRepository.findAll();

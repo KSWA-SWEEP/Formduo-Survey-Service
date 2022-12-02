@@ -21,7 +21,7 @@ import java.util.Map;
 @NoArgsConstructor
 public class QboxResponseDto {
 
-    private int qId;
+    private String qId;
     private String qTitle;
 
     private String qInfo;
@@ -43,7 +43,7 @@ public class QboxResponseDto {
     // 클라이언트가 요청했을 때 보여질 애들을 정합시다~.
 
     public QboxResponseDto(Qbox entity){
-        this.qId = entity.getQId();
+        this.qId = entity.getId();
         this.qTitle = entity.getQTitle();
         this.qInfo = entity.getQInfo();
         this.name = entity.getName();
@@ -52,6 +52,7 @@ public class QboxResponseDto {
         this.qMulti = entity.getQMulti();
         this.qContents = entity.getQContents();
         this.contentYn = entity.getContentYn();
+        this.delYn = entity.getDelYn();
         this.updDt = entity.getUpdDt();
     }
     

@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class SurveyService {
     private final SurveysRepository surveysRepository;
     @Transactional
-    public Integer save(SurveysRequestDto requestDto, String email) {
+    public String save(SurveysRequestDto requestDto, String email) {
 //        Members members = memberRepository.findByEmail(SecurityUtil.getCurrentMemberEmail())
 //                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 사용자입니다. " + SecurityUtil.getCurrentMemberEmail()));
         //설문 저장
@@ -30,7 +30,7 @@ public class SurveyService {
     }
 
     @Transactional
-    public Integer update(int id, SurveysUpdateRequestDto requestDto){
+    public String update(String id, SurveysUpdateRequestDto requestDto){
         Surveys surveys = surveysRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시물이 없습니다. id =" + id));
 
@@ -41,13 +41,16 @@ public class SurveyService {
                 requestDto.getSvyEndDt(),
                 requestDto.getUpdDt(),
                 requestDto.getSvyEndMsg(),
-                requestDto.getSvyRespCount(),
+                surveys.getSvyRespCount(),
                 requestDto.getSvyRespMax());
+
+        surveysRepository.save(surveys);
+
         return id;
     }
 
     @Transactional(readOnly = true)
-    public SurveysResponseDto findById(int id){
+    public SurveysResponseDto findById(String id){
         Surveys entity = surveysRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 설문이 없습니다. id ="+ id));
 
@@ -69,13 +72,14 @@ public class SurveyService {
     }
 
     @Transactional
-    public String remove(int id){
+    public String remove(String id){
         Surveys entity = surveysRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 설문이 없습니다. id ="+ id));
 
 //        surveysRepository.deleteById(id);
         entity.remove();
-        return entity.getSvyTitle();}
+        surveysRepository.save(entity);
+        return entity.getId();}
 
 
     @Transactional(readOnly = true)

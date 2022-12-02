@@ -4,8 +4,11 @@ import com.vladmihalcea.hibernate.type.json.JsonType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.bson.types.ObjectId;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -15,60 +18,75 @@ import java.util.Map;
 
 @Getter
 @NoArgsConstructor
-@Entity
+//@Entity
 @TypeDef(name = "json", typeClass = JsonType.class)
-@Table(name = "TB_SVY")
+@Document(collection = "surveys")
+//@Table(name = "TB_SVY")
 public class Surveys {
 
 //    private Instant current = Instant.now();
-
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "SVY_ID", nullable = false)
-    private Integer id;
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
+//    @Column(name = "SVY_ID", nullable = false)
+//    @Field("SVY_ID")
+    private String id;
 
-    @Column(name = "REG_USER", nullable = false)
+//    @Column(name = "REG_USER", nullable = false)
+    @Field("REG_USER")
     private String email;
 
-    @Column(name = "SVY_ST", nullable = false)
+//    @Column(name = "SVY_ST", nullable = false)
+    @Field("SVY_ST")
     private String svySt;
 
-    @Column(name = "SVY_TITLE", nullable = false)
+//    @Column(name = "SVY_TITLE", nullable = false)
+    @Field("SVY_TITLE")
     private String svyTitle;
 
     @Lob
-    @Column(name = "SVY_INTRO")
+//    @Column(name = "SVY_INTRO")
+    @Field("SVY_INTRO")
     private String svyIntro;
 
     @Type(type = "json")
-    @Column(name = "SVY_CONTENT",nullable = false, columnDefinition = "json")
+//    @Column(name = "SVY_CONTENT",nullable = false, columnDefinition = "json")
+    @Field("SVY_CONTENT")
     private List<Map<String, Object>> svyContent;
 
-    @Column(name = "SVY_START_DT")
+//    @Column(name = "SVY_START_DT")
+    @Field("SVY_START_DT")
     private Instant svyStartDt;
 
-    @Column(name = "SVY_END_DT")
+//    @Column(name = "SVY_END_DT")
+    @Field("SVY_END_DT")
     private Instant svyEndDt;
 
-    @Column(name = "DEL_YN")
+//    @Column(name = "DEL_YN")
+    @Field("DEL_YN")
     private Character delYn;
 
-    @Column(name = "REG_DT")
+//    @Column(name = "REG_DT")
+    @Field("REG_DT")
     private Instant regDt;
 
-    @Column(name = "UPD_DT")
+//    @Column(name = "UPD_DT")
+    @Field("UPD_DT")
     private Instant updDt;
 
-    @Column(name = "SVY_END_MSG")
+//    @Column(name = "SVY_END_MSG")
+    @Field("SVY_END_MSG")
     private String svyEndMsg;
 
-    @Column(name = "SVY_RESP_MAX")
+//    @Column(name = "SVY_RESP_MAX")
+    @Field("SVY_RESP_MAX")
     private Integer svyRespMax;
 
-    @Column(name = "SVY_RESP_COUNT")
+//    @Column(name = "SVY_RESP_COUNT")
+    @Field("SVY_RESP_COUNT")
     private Integer svyRespCount;
 
-    @Column(name = "SVY_TYPE")
+//    @Column(name = "SVY_TYPE")
+    @Field("SVY_TYPE")
     private String svyType;
 
     @Builder

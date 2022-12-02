@@ -15,6 +15,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,26 +39,26 @@ public class SurveysApiController {
             @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR")
     })
     @PostMapping("")
-    public int save(@RequestBody SurveysRequestDto requestDto, @RequestHeader("X-Authorization-Id") String email) {
+    public String save(@RequestBody SurveysRequestDto requestDto, @RequestHeader("X-Authorization-Id") String email) {
         System.out.println(email);
         return surveyService.save(requestDto, email);
     }
 
     @Operation(summary = "설문 수정 요청", description = "설문이 수정됩니다.")
     @PutMapping("{id}")
-    public int update(@PathVariable Integer id, @RequestBody SurveysUpdateRequestDto requestDto){
+    public String update(@PathVariable String id, @RequestBody SurveysUpdateRequestDto requestDto){
         return surveyService.update(id, requestDto);
     }
 
     @Operation(summary = "설문 조회 요청", description = "해당 아이디의 설문이 조회됩니다.")
     @GetMapping("{id}")
-    public SurveysResponseDto findSurveyById (@PathVariable Integer id) {
+    public SurveysResponseDto findSurveyById (@PathVariable String id) {
         return surveyService.findById(id);
     }
 
     @Operation(summary = "설문 삭제 요청", description = "해당 아이디의 설문이 삭제됩니다.")
     @DeleteMapping("{id}")
-    public String remove (@PathVariable Integer id) {
+    public String remove (@PathVariable String id) {
         return surveyService.remove(id);
     }
 
@@ -75,7 +76,7 @@ public class SurveysApiController {
 
     @Operation(summary = "Q-BOX 생성 요청", description = "Q-BOX 생성을 요청합니다.")
     @PostMapping("/qbox")
-    public int save(@RequestBody QboxRequestDto requestDto) {
+    public String save(@RequestBody QboxRequestDto requestDto) {
         return qBoxService.save(requestDto);
     }
 
@@ -87,7 +88,7 @@ public class SurveysApiController {
 
     @Operation(summary = "Q-BOX 조회 요청", description = "Q-BOX id를 이용하여 내용 조회를 요청합니다.")
     @GetMapping("/qbox/{id}")
-    public QboxResponseDto findById (@PathVariable int id) {
+    public QboxResponseDto findById (@PathVariable String id) {
         return qBoxService.findById(id);
     }
 

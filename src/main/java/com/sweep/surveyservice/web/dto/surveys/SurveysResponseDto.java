@@ -17,7 +17,7 @@ import java.util.Map;
 @NoArgsConstructor
 public class SurveysResponseDto  {
 
-    private  Integer id;
+    private  String id;
     private  String regUser;
     private  String svySt;
     private  String svyTitle;
@@ -36,7 +36,7 @@ public class SurveysResponseDto  {
     // 클라이언트가 요청했을 때 보여질 애들을 정합시다~.
 
     public SurveysResponseDto(Surveys entity){
-//        System.out.println(entity.getSvyContent());
+//        System.out.println(entity);
         this.id = entity.getId();
         this.regUser = entity.getEmail();
         this.svySt = entity.getSvySt();

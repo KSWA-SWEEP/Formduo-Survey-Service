@@ -37,7 +37,7 @@ public class KafkaConsumer {
             ex.printStackTrace();
         }
 
-        int surveyId = (Integer) map.get("svyId");
+        String surveyId = (String) map.get("svyId");
         Surveys entity = repository.findById(surveyId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 설문이 없습니다. id =" + surveyId));
 
