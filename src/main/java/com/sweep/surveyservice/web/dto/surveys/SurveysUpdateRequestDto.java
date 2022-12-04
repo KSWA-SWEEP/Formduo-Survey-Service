@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 
@@ -41,6 +42,6 @@ public class SurveysUpdateRequestDto {
         this.svyEndDt = svyEndDt;
         this.svyRespMax = svyRespMax;
         this.svyRespCount = svyRespCount;
-        this.updDt = Instant.now();
+        this.updDt = Instant.now().plus(9, ChronoUnit.HOURS);
     }
 }

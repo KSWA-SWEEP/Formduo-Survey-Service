@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 
@@ -53,8 +54,8 @@ public class SurveysRequestDto {
                 .svyIntro(svyIntro)
                 .svyContent(svyContent)
                 .svyEndMsg(svyEndMsg)
-                .regDt(Instant.now())
-                .updDt(Instant.now())
+                .regDt(Instant.now().plus(9, ChronoUnit.HOURS))
+                .updDt(Instant.now().plus(9, ChronoUnit.HOURS))
                 .delYn('N')
                 .svyStartDt(svyStartDt)
                 .svyEndDt(svyEndDt)
