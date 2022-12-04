@@ -1,5 +1,6 @@
 package com.sweep.surveyservice;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -13,13 +14,12 @@ import java.util.TimeZone;
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient
 @EnableMongoRepositories(basePackages = "com.sweep.surveyservice.domain")
+@Slf4j
 public class SurveyServiceApplication {
 
     @PostConstruct
     public void started() {
-        System.out.println("현재시각 : " + new Date());
-        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
-        System.out.println("현재시각 : " + new Date());
+        log.info("Server On : " + new Date());
     }
     public static void main(String[] args) {
         SpringApplication.run(SurveyServiceApplication.class, args);
