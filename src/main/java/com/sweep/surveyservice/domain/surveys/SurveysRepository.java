@@ -21,6 +21,6 @@ public interface SurveysRepository extends MongoRepository<Surveys, String> {
 //
 //    @Query(" select s from Surveys s where s.delYn = 'N' and s.email = ?1 and s.svyType= ?2")
 
-    @Query(" {'delYn':  'N', 'email': ?1, 'svyType': ?2}")
+    @Query(" {'delYn':  'N', 'email': ?0, 'svyType': ?1}")
     public List<Surveys> findAllByEmailAndSvyType(String email, String type);
 }
